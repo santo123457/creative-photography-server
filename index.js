@@ -120,22 +120,22 @@ client.connect(err => {
       })
   })
 
-  // app.post("/addAdmin", (req, res) => {
-  //   const Product = req.body;
-  //   adminCollection.insertOne(Product)
-  //     .then(result => {
-  //       console.log("data added Successfully");
+  app.post("/addAdmin", (req, res) => {
+    const Product = req.body;
+    adminCollection.insertOne(Product)
+      .then(result => {
+        console.log("data added Successfully");
 
-  //     })
-  // })
+      })
+  })
 
-  // app.post('/isAdmin',(req,res)=>{
-  //   const email = req.body.email;
-  //   adminCollection.find({ email: email})
-  //   .toArray((err,documents)=>{
-  //     res.send(documents);
-  //   })
-  // })
+  app.post('/isAdmin',(req,res)=>{
+    const email = req.body.email;
+    adminCollection.find({ email: email})
+    .toArray((err,documents)=>{
+      res.send(documents);
+    })
+  })
 
 
   app.get('/', (req, res) => {
